@@ -37,7 +37,7 @@ class Card extends React.Component {
           {title}
         </div>
     
-        <div className="card__like" onClick={() => handleHeart(itemId)}>
+        <div className="card__like" onClick={() => handleHeart(itemId , title)}>
             {
               hearted ?
               (<i className="fa fa-heart"/>

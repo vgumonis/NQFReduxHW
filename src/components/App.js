@@ -46,7 +46,8 @@ class App extends React.Component {
             description={listItem.overview}
             itemId={listItem.id}
             hearted={hearted.includes(listItem.id)}
-            handleHeart={ hearted.includes(listItem.id) ? onUnheart : (onHeart, () => this.props.onLog("Liked") )}
+            handleHeart={ hearted.includes(listItem.id) ? onUnheart : onHeart }
+
           />
         ))}
       </div>
@@ -65,7 +66,9 @@ const mapDispatchToProps = (dispatch) => ({
   onGetGenres: () => dispatch(getGenres()),
   onGetMoviesByGenre: (id) => dispatch(getMoviesByGenre(id)),
   onHeart: (id) => dispatch(heart(id)),
+  onHeart: (id) => dispatch(log("Sirdute uzdeta")),
   onUnheart: (id) => dispatch(unheart(id)),
+  onUnheart: (id) => dispatch(log("Sirdute uimata")),
   onLog: (entry) => dispatch(log(entry)),
 });
 
